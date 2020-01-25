@@ -20,4 +20,27 @@ public class studentdao {
               System.out.println(e);
         }
     }
+
+public void testSearch(student s)
+    {
+    Connection con=null;
+    PreparedStatement ps=null;
+    ResultSet rs=null;
+    con=mycon.getConnection();
+    try{
+    String sql;
+    sql="select * from student";
+    ps=con.prepareStatement(sql);
+    rs=ps.executeQuery();
+    while(rs.next())
+    {
+        System.out.print(rs.getInt(1));
+        System.out.println(  rs.getString(2));
+    }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+    }
+ 
+    
 }
