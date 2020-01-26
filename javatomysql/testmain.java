@@ -15,7 +15,7 @@ public class testmain {
         s.setName(sc.next());
         studentdao sd=new studentdao();
         sd.insertEle(s);
-        sd.testSearch(s);
+        
     }
     
 }
