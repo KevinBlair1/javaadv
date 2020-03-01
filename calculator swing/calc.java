@@ -1,56 +1,172 @@
 
-package calcdj;
-import java.awt.*;
+import java.awt.event.*;  
 import java.util.Stack;
-import java.awt.event.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.Button;
-import java.awt.*;
-public class calc{
-static String s="";
-static int a,b;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JTextField;
 
-public static void main(String args[]){
- 
-Frame f=new Frame("Button Example"); 
-Button add=new Button("additon");
-add.setBounds(230,200,80,30);
-Button sub=new Button("subtraction");
-sub.setBounds(230,300,80,30);
-Button mul=new Button("multipicaltion");
-mul.setBounds(230,400,80,30);
-Button div=new Button("division");
-div.setBounds(230,500,80,30);
-Button cls=new Button("clear ");
-cls.setBounds(30,500,80,30);
+class Calc {
 
-Button eq=new Button("=");
-eq.setBounds(140,500,80,30);
-final TextField tf=new TextField("  ",140);
-tf.setBounds(30,100,200,50);
-Button one=new Button("1");
-one.setBounds(30,200,60,30);
-Button two=new Button("2");
-two.setBounds(90,200,60,30);
-Button three=new Button("3");
-three.setBounds(140,200,60,30);
-Button four=new Button("4");
-four.setBounds(30,300,60,30);
-Button fiv=new Button("5");
-fiv.setBounds(90,300,60,30);
-Button six=new Button("6");
-six.setBounds(140,300,60,30);
-Button sev=new Button("7");
-sev.setBounds(30,400,60,30);
-Button eig=new Button("8");
-eig.setBounds(90,400,60,30);
-Button nine=new Button("9");
-nine.setBounds(140,400,60,30);
-Button zero=new Button("0");
-zero.setBounds(90,500,60,30);
-Button dot=new Button(".");
-dot.setBounds(110,500,60,30);
+    static String s="";   
+public static void main(String[] args) {  
+    
+JTextField tf=new JTextField("  ",140);
+tf.setBounds(30,30,250,50);   
+JFrame f=new JFrame("Button Example"); 
+f.setTitle("Calculator");
+JButton add=new JButton("+");
+add.setBounds(200,100,80,40);
+
+JButton sub=new JButton("-");
+sub.setBounds(200,200,80,40);
+
+JButton mul=new JButton("x");
+mul.setBounds(200,300,80,40);
+
+JButton div=new JButton("/");
+div.setBounds(200,400,80,40);
+
+JButton cls=new JButton("clear ");
+cls.setBounds(50,480,100,40);
+
+JButton eq=new JButton("=");
+eq.setBounds(140,400,60,40);
+
+JButton bak=new JButton("Backspace");
+bak.setBounds(170,480,100,40);
+
+JButton zero=new JButton("0");
+zero.setBounds(90,400,60,40);
+
+JButton dot=new JButton(".");
+dot.setBounds(30,400,60,40);
+
+JButton one=new JButton("1");
+one.setBounds(30,100,60,40);
+
+JButton two=new JButton("2");
+two.setBounds(90,100,60,40);
+
+JButton three=new JButton("3");
+three.setBounds(140,100,60,40);
+
+JButton four=new JButton("4");
+four.setBounds(30,200,60,40);
+
+JButton fiv=new JButton("5");
+fiv.setBounds(90,200,60,40);
+
+JButton six=new JButton("6");
+six.setBounds(140,200,60,40);
+
+JButton sev=new JButton("7");
+sev.setBounds(30,300,60,40);
+
+JButton eig=new JButton("8");
+eig.setBounds(90,300,60,40);
+
+JButton nine=new JButton("9");
+nine.setBounds(140,300,60,40);
+
+
+
+
+//event perform
+    one.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"1"); 
+            s=s+"1"; 
+        }   });  
+    two.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"2");  
+            s=s+"2";
+        }   });  
+    three.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"3");
+            s=s+"3";  
+        }   });  
+    four.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"4");  
+            s=s+"4";
+        }   });  
+    fiv.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"5");  
+            s=s+"5"; 
+       }   });  
+    six.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"6");
+            s=s+"6";  
+        }   });  
+    sev.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"7");  
+            s=s+"7";
+        }   });  
+    eig.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"8");  
+            s=s+"8";
+        }   });  
+    nine.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"9");  
+            s=s+"9";
+        }   });  
+    zero.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"0"); 
+            s=s+"0"; 
+        }   });  
+    add.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"+");  
+            s=s+" + ";  
+      }   });  
+    sub.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"-");  
+            s=s+" - ";    
+    }   });  
+    div.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"/");  
+            s=s+" / ";  
+      }   });  
+    mul.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+            tf.setText(s+"*");  
+            s=s+" * ";  
+      }   });  
+    eq.addActionListener(new ActionListener(){  
+        public void actionPerformed(ActionEvent e){  
+           tf.setText(" = "); 
+           float result = EvaluateString(s);
+           tf.setText(Float.toString(result));
+        } });
+    cls.addActionListener(new ActionListener() {
+    public void actionPerformed(ActionEvent e) {
+        s=" ";
+    tf.setText(s);
+    
+    }});
+    dot.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e){
+            tf.setText(s+".");
+            s=s+".";
+      }   });
+    bak.addActionListener(new ActionListener() {
+        public void actionPerformed(ActionEvent e){
+           String s=tf.getText();
+			tf.setText("");
+			for(int i=0;i<s.length()-1;i++)
+			tf.setText(tf.getText()+s.charAt(i));
+      }   });
+    
 f.add(add);
 f.add(sub);
 f.add(mul);
@@ -69,121 +185,12 @@ f.add(nine);
 f.add(zero);
 f.add(dot);
 f.add(tf);
-f.setSize(600,600);//frame size 300 width and 300 height
-f.setLayout(null);//no layout now bydefault BorderLayout
-f.setVisible(true);
-add.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"+";
-    tf.setText(s);
+f.add(bak);
     
-    }});
-sub.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"-";
-    tf.setText(s);
-    
-    }});
-mul.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"*";
-    tf.setText(s);
-    
-    }});
-div.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"/";
-    tf.setText(s);
-    
-    }});
-cls.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=" ";
-    tf.setText(s);
-    
-    }});
-eq.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        tf.setText(" = "); 
-           float result = EvaluateString(s);
-           tf.setText(Float.toString(result));
-    }});
-
-one.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"1";
-    tf.setText(s);
-        }});
-
-   
-two.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"2";
-    tf.setText(s);
-    
-    }});
-
- 
-three.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"3";
-    tf.setText(s);
-    
-    }});
-four.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"4";
-    tf.setText(s);
-    
-    }});
-fiv.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"5";
-    tf.setText(s);
-    
-    }});
-six.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"6";
-    tf.setText(s);
-    
-    }});
-sev.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"7";
-    tf.setText(s);
-    
-    }});
-eig.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"8";
-    tf.setText(s);
-    
-    }});
-nine.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"9";
-    tf.setText(s);
-    
-    }});
-zero.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+"0";
-    tf.setText(s);
-    
-    }});
-dot.addActionListener(new ActionListener() {
-    public void actionPerformed(ActionEvent e) {
-        s=s+".";
-    tf.setText(s);
-    
-    }});
-
-
-
-
-
-}
+    f.setSize(400,600);  
+    f.setLayout(null);  
+    f.setVisible(true);
+}  
     static float EvaluateString(String s1) 
 	{
 		char tokens[] = s1.toCharArray();
@@ -259,6 +266,4 @@ dot.addActionListener(new ActionListener() {
 					throw new UnsupportedOperationException("Cannot divide by zero");
 				}
 		}
-		return 0;
-	}		
-} 
+		return 0;  } }
